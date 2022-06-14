@@ -9,9 +9,13 @@ def create_app():
     def hello():
         return "Hello, PetFacts!"
 
-    # Register pet blueprint
+    # Register pet blueprint endpoint
     from . import pet
-    app.register_blueprint(pet.bp)
+    app.register_blueprint(pet.bp) # Pointing to pet.py on same file level
     
+    # Register fact blueprint endpoint
+    from . import fact
+    app.register_blueprint(fact.bp) # Pointing to fact.py on same file level
+
     return app
     
