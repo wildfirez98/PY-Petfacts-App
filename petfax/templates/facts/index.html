@@ -5,8 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>UserFacts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>UserFacts</h1>
+    <div class="container">
+        
+            <h1>UserFacts</h1>
+            {% for fact in facts %} <!-- For loop to cycle thru facts from fact.py template-->
+                <h4>Submitted by {{ fact.submitter }}</h4>
+                {{ fact.fact }}
+            {% endfor %}  
+        
+    </div>
 </body>
 </html>
